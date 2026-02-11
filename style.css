@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+body.rose-bg {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.center {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pink-bg {
+  background: linear-gradient(135deg, #ffd6e8, #fff0f6);
+}
+
+.rose-bg {
+  background: linear-gradient(135deg, #e8b7c8, #f8dbe5);
+}
+
+.soft-bg {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+    135deg,
+    #e8b7c8,
+    #f8dbe5,
+    #fff0f6
+  );
+}
+
+
+.card {
+  background: rgba(255,255,255,0.85);
+  padding: 30px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  animation: fadeUp 1s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.card.wide {
+  width: 90vw;          /* ← THIS is the key */
+  max-width: 1400px;   /* prevents ultra-wide screens from going crazy */
+  margin: 0 auto;
+  padding: 32px;
+  box-sizing: border-box;
+}
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+.cute-btn, .link-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 30px;
+  border-radius: 25px;
+  border: none;
+  background: #ff8fb8;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.photo-hover img {
+  width: 300px;
+  border-radius: 20px;
+  transition: transform 0.3s;
+}
+
+.photo-hover img:hover {
+  transform: scale(1.05);
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 18px;
+  margin-top: 25px;
+
+  justify-items: center;   /* centers images inside grid */
+  align-items: center;
+}
+
+
+.gallery img {
+  width: 140px;
+  height: 180px;
+  object-fit: cover;
+
+  border-radius: 18px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.gallery img:hover {
+  transform: scale(1.08);
+}
+
+#timer {
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+.hidden {
+  display: none;
+}
+#hearts div {
+  position: fixed;
+  z-index: 999;
+  pointer-events: none;
+}
+.link-btn::before
+.link-btn::after{
+  content: none !important;
+  display: none !important;
+}
+/* 🚨 HARD KILL: allow ONLY ONE link button */
+.link-btn {
+  display: inline-block;
+}
+
+/* If ANY duplicate exists, hide it */
+.link-btn:not(:first-of-type) {
+  display: none !important;
+}
+.card {
+  position: relative;
+  overflow: hidden;
+}
+
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
